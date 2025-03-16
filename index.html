@@ -16,165 +16,216 @@
 
     <!-- Custom CSS -->
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-        }
+       :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
 
-        /* Premium Header */
-        .main-header {
-            background: var(--gradient-bg);
-            padding: 1rem 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .brand-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        .site-logo {
-            height: 50px;
-            width: auto;
-        }
+/* Navigation Styles */
+.navbar {
+    background: var(--gradient-bg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
 
-        .site-title {
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            margin: 0;
-        }
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white !important;
+    font-size: 1.5rem;
+}
 
-        .site-subtitle {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.9rem;
-            margin: 0;
-        }
+/* Main Content Container */
+.quote-container {
+    flex: 1;
+    padding: 2rem 0;
+}
 
-        /* Main Content */
-        .quote-container {
-            min-height: calc(100vh - 280px);
-            display: flex;
-            align-items: center;
-        }
+/* Quote Card Design */
+.quote-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 2.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
 
-        .quote-card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 3rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+.quote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-bg);
+}
 
-        .quote-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-bg);
-        }
+.quote-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #333;
+    position: relative;
+    padding-left: 40px;
+}
 
-        .quote-text {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            color: #333;
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .quote-text::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -15px;
-            font-size: 4rem;
-            color: var(--secondary-color);
-            opacity: 0.3;
-        }
-
-        /* Footer */
-        .main-footer {
-            background: var(--gradient-bg);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: auto;
-        }
-
-        .footer-section-title {
-            font-family: 'Poppins', sans-serif;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
+.quote-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -15px;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    opacity: 0.3;
+}
+.social-links a {
             color: white;
             font-size: 1.5rem;
             margin-right: 15px;
             transition: all 0.3s ease;
         }
-
         .social-links a:hover {
             transform: translateY(-3px);
-            color: var(--secondary-color);
+            color: #3498db;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* Search Bar Styles */
+.search-bar {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
+.search-bar input {
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+}
 
-        /* Navigation */
-        .navbar {
-            background: var(--gradient-bg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+.search-bar button {
+    border-radius: 0 30px 30px 0;
+    padding: 15px 30px;
+}
 
-        .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            color: white !important;
-        }
+/* Button Styles */
+.btn-group {
+    gap: 0.8rem;
+}
 
-        .navbar-toggler {
-            border: none;
-        }
+.btn {
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
 
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
 
-        .navbar-toggler-icon {
-            color: white;
-        }
+/* Tags Badges */
+.badge {
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
 
-        .nav-link {
-            color: white !important;
-            font-size: 1.1rem;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
+/* Footer Styles */
+.main-footer {
+    background: var(--gradient-bg);
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
+}
 
-        .nav-link:hover {
-            color: var(--secondary-color) !important;
-            transform: translateY(-2px);
-        }
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .nav-link i {
-            margin-right: 5px;
-        }
+@keyframes slideDown {
+    from { top: -50px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Notification Popup */
+.notification-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-popup.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-card {
+        padding: 1.5rem;
+    }
+    
+    .quote-text {
+        font-size: 1.2rem;
+        padding-left: 35px;
+    }
+
+    .quote-text::before {
+        font-size: 3.5rem;
+        top: -12px;
+    }
+
+    .search-bar input {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn-group {
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        flex: 1 0 45%;
+        margin: 5px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -209,23 +260,73 @@
         </div>
     </div>
 </nav>
-
-<!-- Main Content -->
+<br><br>
+<!-- Main Content Section -->
 <main class="quote-container">
     <div class="container">
+        <!-- Search Section -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto">
+                <div class="input-group search-bar shadow-lg">
+                    <input type="text" 
+                           id="authorSearch"
+                           class="form-control"
+                           placeholder="লেখক, ট্যাগ বা উক্তি খুঁজুন..."
+                           aria-label="সার্চ করুন">
+                    <button class="btn btn-primary" 
+                            onclick="handleSearch()"
+                            type="button">
+                        <i class="fas fa-search me-2"></i>খুঁজুন
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote Display Section -->
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="quote-card fade-in">
+                <!-- Main Quote Card -->
+                <div class="quote-card fade-in" id="singleQuote">
                     <p class="quote-text" id="quote"></p>
-                    <div class="mt-4 d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="text-muted mb-0" id="author"></p>
-                            <div id="tags" class="mt-2"></div>
+                    
+                    <!-- Quote Meta Section -->
+                    <div class="quote-meta mt-4">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <!-- Author & Tags -->
+                            <div class="meta-text">
+                                <p class="text-muted mb-0" id="author"></p>
+                                <div id="tags" class="mt-2"></div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="btn-group action-buttons">
+                                <button onclick="getNewQuote()" 
+                                        class="btn btn-primary"
+                                        aria-label="নতুন উক্তি">
+                                    <i class="fas fa-random me-2"></i>নতুন
+                                </button>
+                                <button onclick="copyQuote()" 
+                                        class="btn btn-success"
+                                        aria-label="কপি করুন">
+                                    <i class="fas fa-copy me-2"></i>কপি
+                                </button>
+                                <button onclick="shareQuote()" 
+                                        class="btn btn-info text-white"
+                                        aria-label="শেয়ার করুন">
+                                    <i class="fas fa-share-alt me-2"></i>শেয়ার
+                                </button>
+                            </div>
                         </div>
-                        <button onclick="getNewQuote()" class="btn btn-primary">
-                            <i class="fas fa-random me-2"></i>নতুন উক্তি
-                        </button>
                     </div>
+                </div>
+
+                <!-- Search Results Section -->
+                <div id="searchResults" 
+                     class="search-results mt-4" 
+                     style="display: none;"
+                     role="region"
+                     aria-live="polite">
+                     <!-- Results will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -268,53 +369,185 @@
 </footer>
 
 <script>
-    // JSON data loading and quote management
-    let quotes = [];
-
-    async function loadQuotes() {
+    // কনফিগারেশন অবজেক্ট
+    const CONFIG = {
+        quoteSources: ['shahin.json', 'banibd.json', 'bongquotes.json'],
+        defaultAuthor: 'অজানা',
+        defaultTags: ['সাধারণ'],
+        elements: {
+            quote: document.getElementById('quote'),
+            author: document.getElementById('author'),
+            tags: document.getElementById('tags'),
+            searchInput: document.getElementById('authorSearch'),
+            resultsContainer: document.getElementById('searchResults'),
+            mainQuoteCard: document.getElementById('singleQuote')
+        }
+    };
+    
+    let allQuotes = [];
+    
+    // এপ্লিকেশন ইনিশিয়ালাইজেশন
+    async function initializeApp() {
         try {
-            const responses = await Promise.all([
-                fetch('shahin.json'),
-                fetch('banibd.json'),
-                fetch('bongquotes.json')
-            ]);
-            
-            const data = await Promise.all(responses.map(r => r.json()));
-            quotes = [...data[0], ...data[1].map(q => ({
-                ...q,
-                writer: q.writer || 'অজানা',
-                tags: q.tags || ['সাধারণ']
-            }))];
-            
+            await loadAllQuotes();
+            setupEventListeners();
             getNewQuote();
         } catch (error) {
-            console.error('Error loading quotes:', error);
+            showNotification('ডেটা লোড করতে সমস্যা! পরে চেষ্টা করুন', 'error');
         }
     }
-
+    
+    // কোড লোড এবং প্রসেসিং
+    async function loadAllQuotes() {
+        try {
+            const responses = await Promise.all(
+                CONFIG.quoteSources.map(source => 
+                    fetch(source)
+                        .then(response => {
+                            if (!response.ok) throw new Error('নেটওয়ার্ক সমস্যা');
+                            return response.json();
+                        })
+                        .catch(error => {
+                            console.error(`${source} লোড ব্যর্থ:`, error);
+                            return [];
+                        })
+                )
+            );
+            
+            allQuotes = responses.flat().map(quote => ({
+                quote: quote.quote || '',
+                writer: quote.writer || CONFIG.defaultAuthor,
+                tags: Array.isArray(quote.tags) ? quote.tags : CONFIG.defaultTags
+            }));
+        } catch (error) {
+            throw new Error('ডেটা প্রসেসিং ব্যর্থ');
+        }
+    }
+    
+    // র‍্যান্ডম উক্তি দেখানো
     function getNewQuote() {
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        const {quote, writer, tags} = quotes[randomIndex];
-        
-        document.getElementById('quote').textContent = quote;
-        document.getElementById('author').textContent = `- ${writer}`;
-        
-        const tagsHtml = tags.map(tag => 
+        resetUI();
+        const randomQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+        updateDisplay(randomQuote);
+        animateElement(CONFIG.elements.mainQuoteCard, 'fade-in');
+    }
+    
+    // সার্চ ফাংশনালিটি
+    function handleSearch() {
+        const searchTerm = CONFIG.elements.searchInput.value.trim().toLowerCase();
+        if (!searchTerm) return resetUI();
+    
+        const results = allQuotes.filter(q => 
+            q.writer.toLowerCase().includes(searchTerm) ||
+            q.quote.toLowerCase().includes(searchTerm) ||
+            q.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+        );
+    
+        showResults(results, searchTerm);
+    }
+    
+    // UI আপডেট ফাংশন
+    function updateDisplay(quote) {
+        CONFIG.elements.quote.textContent = quote.quote;
+        CONFIG.elements.author.textContent = `- ${quote.writer}`;
+        CONFIG.elements.tags.innerHTML = quote.tags.map(tag => 
             `<span class="badge bg-secondary me-1">${tag}</span>`
         ).join('');
-        document.getElementById('tags').innerHTML = tagsHtml;
-        
-        // Add animation
-        document.querySelector('.quote-card').classList.add('fade-in');
-        setTimeout(() => {
-            document.querySelector('.quote-card').classList.remove('fade-in');
-        }, 600);
     }
-
-    // Initial load
-    window.onload = loadQuotes;
-</script>
-
+    
+    // সার্চ রেজাল্ট দেখানো
+    function showResults(results, term) {
+        CONFIG.elements.mainQuoteCard.style.display = 'none';
+        CONFIG.elements.resultsContainer.style.display = 'block';
+        
+        const html = results.length ? `
+            <div class="alert alert-success mb-3">
+                "${term}" এর ${results.length}টি ফলাফল
+            </div>
+            ${results.map(quote => `
+                <div class="quote-card mb-4">
+                    <p class="quote-text">${quote.quote}</p>
+                    <div class="mt-3">
+                        <p class="text-muted mb-1">- ${quote.writer}</p>
+                        <div>${quote.tags.map(t => `<span class="badge bg-secondary me-1">${t}</span>`).join('')}</div>
+                    </div>
+                </div>
+            `).join('')}
+        ` : `<div class="alert alert-warning">কোনো ফলাফল পাওয়া যায়নি</div>`;
+        
+        CONFIG.elements.resultsContainer.innerHTML = html;
+    }
+    
+    // কপি ফাংশন
+    async function copyQuote() {
+        try {
+            const text = `${CONFIG.elements.quote.textContent}\n\n${CONFIG.elements.author.textContent}`;
+            await navigator.clipboard.writeText(text);
+            showNotification('উক্তি কপি করা হয়েছে!', 'success');
+        } catch (error) {
+            showNotification('কপি করতে ব্যর্থ!', 'error');
+        }
+    }
+    
+    // শেয়ার ফাংশন
+    async function shareQuote() {
+        try {
+            const shareData = {
+                title: 'বাংলা উক্তি',
+                text: `${CONFIG.elements.quote.textContent}\n\n${CONFIG.elements.author.textContent}`,
+                url: window.location.href
+            };
+    
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                await copyQuote();
+            }
+        } catch (error) {
+            if (error.name !== 'AbortError') {
+                showNotification('শেয়ার করতে সমস্যা!', 'error');
+            }
+        }
+    }
+    
+    // ইউটিলিটি ফাংশন
+    function resetUI() {
+        CONFIG.elements.resultsContainer.style.display = 'none';
+        CONFIG.elements.mainQuoteCard.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function animateElement(element, animation) {
+        element.classList.add(animation);
+        setTimeout(() => element.classList.remove(animation), 500);
+    }
+    
+    function showNotification(message, type) {
+        const popup = document.createElement('div');
+        popup.className = `notification-popup ${type} show`;
+        popup.innerHTML = `
+            <i class="fas ${type === 'success' ? 'fa-check' : 'fa-times'}"></i>
+            ${message}
+        `;
+        document.body.appendChild(popup);
+        setTimeout(() => popup.remove(), 2000);
+    }
+    
+    // ইভেন্ট হ্যান্ডলার
+    function setupEventListeners() {
+        CONFIG.elements.searchInput.addEventListener('keypress', e => {
+            if (e.key === 'Enter') handleSearch();
+        });
+    
+        window.addEventListener('resize', () => {
+            CONFIG.elements.quote.style.fontSize = 
+                window.innerWidth < 768 ? '1.2rem' : '1.4rem';
+        });
+    }
+    
+    // ইনিশিয়ালাইজেশন
+    window.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
