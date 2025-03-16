@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলা উক্তি - Bangla Quotes</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        }
+
+        /* Premium Header */
+        .main-header {
+            background: var(--gradient-bg);
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .site-title {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .site-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Content */
+        .quote-container {
+            min-height: calc(100vh - 280px);
+            display: flex;
+            align-items: center;
+        }
+
+        .quote-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-bg);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #333;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .quote-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -15px;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: auto;
+        }
+
+        .footer-section-title {
+            font-family: 'Poppins', sans-serif;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--secondary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--gradient-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: white !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            color: white;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-quote-left me-2"></i>বাংলা উক্তি
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> হোম
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="authors.html">
+                        <i class="fas fa-users"></i> লেখক
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> যোগাযোগ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="quote-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="quote-card fade-in">
+                    <p class="quote-text" id="quote"></p>
+                    <div class="mt-4 d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted mb-0" id="author"></p>
+                            <div id="tags" class="mt-2"></div>
+                        </div>
+                        <button onclick="getNewQuote()" class="btn btn-primary">
+                            <i class="fas fa-random me-2"></i>নতুন উক্তি
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Premium Footer -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h4 class="footer-section-title">আমাদের সম্পর্কে</h4>
+                <p>বাংলা সাহিত্যের সেরা উদ্ধৃতির সংগ্রহশালা। আমাদের লক্ষ্য বাংলা ভাষার সৌন্দর্য সকলের কাছে পৌঁছে দেওয়া।</p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <h4 class="footer-section-title">দ্রুত লিংক</h4>
+                <ul class="list-unstyled">
+                    <li><a href="privacy-policy.html" class="text-white text-decoration-none">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="terms.html" class="text-white text-decoration-none">সেবার শর্তাবলী</a></li>
+                    <li><a href="authors.html" class="text-white text-decoration-none">লেখক তালিকা</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <h4 class="footer-section-title">সামাজিক যোগাযোগ</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/Shahinurrahman.0.Official?"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/Shahinalam3546"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammad-sheikh-shahinur-rahman/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@Kantheadhikar"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center pt-3 border-top border-white-10">
+            <p class="mb-0">&copy; ২০২৫ বাংলা উক্তি - সর্বস্বত্ত সংরক্ষিত</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JSON data loading and quote management
+    let quotes = [];
+
+    async function loadQuotes() {
+        try {
+            const responses = await Promise.all([
+                fetch('shahin.json'),
+                fetch('banibd.json'),
+                fetch('bongquotes.json')
+            ]);
+            
+            const data = await Promise.all(responses.map(r => r.json()));
+            quotes = [...data[0], ...data[1].map(q => ({
+                ...q,
+                writer: q.writer || 'অজানা',
+                tags: q.tags || ['সাধারণ']
+            }))];
+            
+            getNewQuote();
+        } catch (error) {
+            console.error('Error loading quotes:', error);
+        }
+    }
+
+    function getNewQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const {quote, writer, tags} = quotes[randomIndex];
+        
+        document.getElementById('quote').textContent = quote;
+        document.getElementById('author').textContent = `- ${writer}`;
+        
+        const tagsHtml = tags.map(tag => 
+            `<span class="badge bg-secondary me-1">${tag}</span>`
+        ).join('');
+        document.getElementById('tags').innerHTML = tagsHtml;
+        
+        // Add animation
+        document.querySelector('.quote-card').classList.add('fade-in');
+        setTimeout(() => {
+            document.querySelector('.quote-card').classList.remove('fade-in');
+        }, 600);
+    }
+
+    // Initial load
+    window.onload = loadQuotes;
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
